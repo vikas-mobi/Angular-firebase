@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-5">
+        <h4>Add User</h4>
+        <form ng-submit="addUser()">
+        <div class="form-group">
+            <label for="email">Name:</label>
+            <input type="text" ng-model="user.name" class="form-control" id="nane">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Email:</label>
+            <input type="text" ng-model="user.email" class="form-control" id="text">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Contact:</label>
+            <input type="text" ng-model="user.contact" class="form-control" id="text">
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox"> Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        
+    </div>
+    <div class="col-md-7">
+        <h4>User List</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="u in users">
+                 <th>{{u.name}}</th>
+                 <th>{{u.email}}</th>
+                 <th>{{u.contact}}</th>
+                 <th><a class="btn btn-danger" ng-click="deleteUser(u)" href="">Delete</a></th>
+                 <th><a class="btn btn-success" ng-click="updateUser(u)" href="">Edit</a></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
