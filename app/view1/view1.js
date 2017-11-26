@@ -22,6 +22,7 @@ var config = {
 
   firebase.initializeApp(config);
   var rootRef = firebase.database().ref();
+  
   $scope.users = $firebaseArray(rootRef);
   $scope.user = {name:'',email:'',contact:''};
 
