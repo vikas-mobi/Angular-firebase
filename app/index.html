@@ -28,11 +28,11 @@
           <a class="navbar-brand" href="#">User List</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <!-- <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul> -->
+           <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li> -->
+            <li ng-controller="View1Ctrl"><a ng-click="logout()" href="#">LogOut</a></li>
+          </ul> 
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -40,7 +40,7 @@
     <div class="container">
      <div class="row">
        <div class="col-md-12">
-         <div ng-view></div>
+         <ui-view></ui-view>
        </div>
      </div>
       
@@ -54,7 +54,11 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="bower_components/angular-base64-upload/dist/angular-base64-upload.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="app.js"></script>
+  <script src="factory/fireBase.js"></script>
+  <script src="factory/fireBaseAuth.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="components/version/version.js"></script>

@@ -1,14 +1,13 @@
 'use strict';
+mainApp.controller('View2Ctrl', ['$scope', '$window', function($scope, $window) {
+const auth = firebase.auth()
+$scope.signUp = function(){
+ var promise = auth.createUserWithEmailAndPassword($scope.email, $scope.pass)
 
-angular.module('myApp.view2', ['ngRoute'])
-
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
-  });
-}])
-
-.controller('View2Ctrl', [function() {
+ promise.catch(e =>{
+   console.log(e.message);
+   $window.location.reload();
+ })
+}
 
 }]);
